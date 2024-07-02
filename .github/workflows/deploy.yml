@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,3 +22,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: github pages deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: main
+          folder: dist
