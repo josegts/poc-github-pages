@@ -3,7 +3,10 @@ name: deploy in github pages
 on:
   push:
     branches:
-      - main2
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -26,5 +29,6 @@ jobs:
       - name: github pages deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main2
+          branch: main
           folder: dist
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
