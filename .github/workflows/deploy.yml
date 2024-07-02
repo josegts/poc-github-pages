@@ -3,7 +3,7 @@ name: deploy in github pages
 on:
   push:
     branches:
-      - main
+      - main2
 
 jobs:
   build-and-deploy:
@@ -26,5 +26,5 @@ jobs:
       - name: github pages deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main
+          branch: main2
           folder: dist
